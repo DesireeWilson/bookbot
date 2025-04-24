@@ -6,6 +6,7 @@ def get_book_text(filePath):
     with open(filePath) as f:
         file_contents = f.read()
         return file_contents
+
 def sort_dictionary(char_dict):
     return dict(sorted(char_dict.items(), key=lambda item: item[1], reverse=True))
     
@@ -21,7 +22,7 @@ def print_output(filePath, num_words, char_dict_sorted):
 
 def main():
     if len(sys.argv) != 2:
-        print("To use this program, please refer to the following example: python3 main.py <path_to_book>")
+        print("Usage: python3 main.py <path_to_book>")
         sys.exit(1)        
     filePath = sys.argv[1]
     contents = get_book_text(filePath)
