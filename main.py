@@ -1,3 +1,4 @@
+import sys
 from stats import get_num_words
 from stats import count_characters
 
@@ -19,7 +20,10 @@ def print_output(filePath, num_words, char_dict_sorted):
     print("============= END ===============")
 
 def main():
-    filePath ="books/frankenstein.txt"
+    if len(sys.argv) != 2:
+        print("To use this program, please refer to the following example: python3 main.py <path_to_book>")
+        sys.exit(1)        
+    filePath = sys.argv[1]
     contents = get_book_text(filePath)
     num_words = get_num_words(contents)
     #output = f"{num_words} words found in the document"
